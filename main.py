@@ -67,13 +67,13 @@ def main(page: ft.Page):
                         ft.FloatingActionButton(
                             content=ft.Image(src="Logos/TelegramLogo.png", width=24, height=24),
                             on_click=open_telegram,
-                            tooltip="Telegram",
+                            tooltip="Мы в Telegram",
                             bgcolor=ft.colors.BLUE_GREY
                         ),
                         ft.FloatingActionButton(
                             content=ft.Image(src="Logos/GitHubLogo.png", width=24, height=24),
                             on_click=open_github,
-                            tooltip="GitHub",
+                            tooltip="Репозиторий GitHub",
                             bgcolor=ft.colors.BLACK
                         )
                     ],
