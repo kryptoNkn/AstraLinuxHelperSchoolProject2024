@@ -5,8 +5,6 @@ from menu_manager import MenuManager
 
 def main(page: ft.Page):
     page.title = "Помощник по Astra Linux"
-    page.vertical_alignment = ft.MainAxisAlignment.CENTER
-    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.window_maximized = True
 
     info_manager = InfoManager(page)
@@ -27,6 +25,9 @@ def main(page: ft.Page):
     def open_github(e):
         webbrowser.open("https://github.com/kryptoNkn/AstraLinuxHelperSchoolProject2024")
 
+    def open_link(url):
+        webbrowser.open(url)
+
     page.appbar = ft.AppBar(
         leading=ft.IconButton(ft.icons.MENU, on_click=menu_manager.toggle_menu),
         title=ft.Text("Помощник по Astra Linux"),
@@ -37,55 +38,55 @@ def main(page: ft.Page):
         ]
     )
 
-    stack = ft.Stack(
+    def create_clickable_text(text, url):
+        return ft.GestureDetector(
+            mouse_cursor=ft.MouseCursor.CLICK,
+            on_tap=lambda _: open_link(url),
+            content=ft.Text(text, style=ft.TextThemeStyle.BODY_LARGE, color=ft.colors.BLUE),
+        )
+
+    main_content = ft.Column(
         [
-            ft.Container(
-                content=ft.Column(
-                    [
-                        ft.Text("Добро пожаловать в помощник по Astra Linux!", style=ft.TextThemeStyle.HEADLINE_MEDIUM),
-                        ft.Text("Этот помощник предназначен для помощи в использовании Astra Linux.", style=ft.TextThemeStyle.BODY_LARGE),
-                        ft.Text("Не стесняйтесь использовать этот инструмент для получения дополнительной информации.", style=ft.TextThemeStyle.BODY_LARGE),
-                        ft.Markdown(
-                            "Полезные ссылки:\n"
-                            "1. [Официальный сайт Astra Linux](https://www.astralinux.ru/)\n"
-                            "2. [Форум Astra Linux](https://forum.astralinux.ru/)\n"
-                            "3. [Документация Astra Linux](https://wiki.astralinux.ru/)\n"
-                            "4. [Поддержка Astra Linux](https://support.astralinux.ru/)\n"
-                            "5. [GitHub Astra Linux](https://github.com/astralinuxos)\n",
-                            on_tap_link=lambda e: webbrowser.open(e.data)
-                        )
-                    ],
-                    alignment=ft.MainAxisAlignment.CENTER,
-                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                    spacing=10
-                ),
-                alignment=ft.alignment.center
-            ),
-            ft.Container(
-                content=ft.Row(
-                    [
-                        ft.FloatingActionButton(
-                            content=ft.Image(src="Logos/TelegramLogo.png", width=24, height=24),
-                            on_click=open_telegram,
-                            tooltip="Мы в Telegram",
-                            bgcolor=ft.colors.BLUE_GREY
-                        ),
-                        ft.FloatingActionButton(
-                            content=ft.Image(src="Logos/GitHubLogo.png", width=24, height=24),
-                            on_click=open_github,
-                            tooltip="Репозиторий GitHub",
-                            bgcolor=ft.colors.BLACK
-                        )
-                    ],
-                    alignment=ft.MainAxisAlignment.END
-                ),
-                alignment=ft.alignment.bottom_right,
-                margin=20
+            ft.Text("Добро пожаловать в помощник по Astra Linux!", style=ft.TextThemeStyle.HEADLINE_MEDIUM),
+            ft.Text("Этот помощник предназначен для помощи в использовании Astra Linux.", style=ft.TextThemeStyle.BODY_LARGE),
+            ft.Text("Не стесняйтесь использовать этот инструмент для получения дополнительной информации.", style=ft.TextThemeStyle.BODY_LARGE),
+            ft.Text("Полезные ссылки:", style=ft.TextThemeStyle.BODY_LARGE),
+            create_clickable_text("1. Официальный сайт Astra Linux", "https://www.astralinux.ru/"),
+            create_clickable_text("2. Форум Astra Linux в Telegram", "https://t.me/astralinux_chat"),
+            create_clickable_text("3. Документация Astra Linux", "https://wiki.astralinux.ru/"),
+            create_clickable_text("4. Поддержка Astra Linux", "https://astragroup.ru/support/"),
+            ft.Container(height=20),  # Добавляем отступ между ссылками и кнопками
+            ft.Row(
+                [
+                    ft.FloatingActionButton(
+                        content=ft.Image(src="Logos/TelegramLogo.png", width=24, height=24),
+                        on_click=open_telegram,
+                        tooltip="Мы в Telegram",
+                        bgcolor=ft.colors.BLUE_GREY
+                    ),
+                    ft.FloatingActionButton(
+                        content=ft.Image(src="Logos/GitHubLogo.png", width=24, height=24),
+                        on_click=open_github,
+                        tooltip="Репозиторий GitHub",
+                        bgcolor=ft.colors.BLACK
+                    )
+                ],
+                alignment=ft.MainAxisAlignment.CENTER,
+                spacing=10
             )
         ],
-        expand=True
+        alignment=ft.MainAxisAlignment.CENTER,
+        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+        spacing=10
     )
 
-    page.add(stack)
+    page.add(
+        ft.Column(
+            [main_content],
+            alignment=ft.MainAxisAlignment.CENTER,
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            expand=True
+        )
+    )
 
 ft.app(target=main)
