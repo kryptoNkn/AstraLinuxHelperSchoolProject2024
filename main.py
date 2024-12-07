@@ -25,7 +25,7 @@ def main(page: ft.Page):
         webbrowser.open("https://t.me/krypton_alp")
 
     def open_github(e):
-        webbrowser.open("https://github.com/kryptoNkn")
+        webbrowser.open("https://github.com/kryptoNkn/AstraLinuxHelperSchoolProject2024")
 
     page.appbar = ft.AppBar(
         leading=ft.IconButton(ft.icons.MENU, on_click=menu_manager.toggle_menu),
@@ -37,7 +37,6 @@ def main(page: ft.Page):
         ]
     )
 
-    # Создаем стек для размещения кнопок в правом нижнем углу
     stack = ft.Stack(
         [
             ft.Container(
