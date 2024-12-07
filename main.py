@@ -55,7 +55,7 @@ def main(page: ft.Page):
             create_clickable_text("2. Форум Astra Linux в Telegram", "https://t.me/astralinux_chat"),
             create_clickable_text("3. Документация Astra Linux", "https://wiki.astralinux.ru/"),
             create_clickable_text("4. Поддержка Astra Linux", "https://astragroup.ru/support/"),
-            ft.Container(height=20),  # Добавляем отступ между ссылками и кнопками
+            ft.Container(height=20),
             ft.Row(
                 [
                     ft.FloatingActionButton(

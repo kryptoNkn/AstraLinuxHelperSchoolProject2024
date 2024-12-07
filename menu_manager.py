@@ -14,6 +14,7 @@ class MenuManager:
     def create_menu(self):
         self.buttons = [
             ft.ElevatedButton("Назначение", on_click=self.show_purpose_info, width=self.button_width, height=self.button_height),
+            ft.ElevatedButton("Общие сведения", on_click=self.general_information, width=self.button_width,height=self.button_height),
             ft.ElevatedButton("Начало работы", on_click=self.show_startup_info, width=self.button_width, height=self.button_height),
             ft.ElevatedButton("Завершение работы", on_click=self.show_shutdown_info, width=self.button_width, height=self.button_height),
             ft.ElevatedButton("Запуск ОС", on_click=self.show_boot_info, width=self.button_width, height=self.button_height),
@@ -46,7 +47,15 @@ class MenuManager:
             ft.ElevatedButton("Клиентская часть", on_click=self.client, width=self.button_width, height=self.button_height),
             ft.ElevatedButton("Команда who", on_click=self.who, width=self.button_width, height=self.button_height),
             ft.ElevatedButton("Оптимизация баз данных", on_click=self.optimize_data_bases, width=self.button_width, height=self.button_height),
-            ft.ElevatedButton("Общие сведения", on_click=self.general_information, width=self.button_width,height=self.button_height),
+            ft.ElevatedButton("PDF Qpdfview", on_click=self.PDF_Qpdfview, width=self.button_width, height=self.button_height),
+            ft.ElevatedButton("Резервное копирование и восстановление", on_click=self.Backup_and_Restore, width=self.button_width,height=self.button_height),
+            ft.ElevatedButton("Интерактивный терминал", on_click=self.Interactive_terminal,width=self.button_width, height=self.button_height),
+            ft.ElevatedButton("Использование процедурных языков", on_click=self.Using_procedural_languages,width=self.button_width, height=self.button_height),
+            ft.ElevatedButton("Управление пользователями", on_click=self.User_management,width=self.button_width, height=self.button_height),
+            ft.ElevatedButton("Мандатное управление доступом", on_click=self.Mandatory_access_control,width=self.button_width, height=self.button_height),
+            ft.ElevatedButton("Словарь Goldendict", on_click=self.Goldendict_Dictionary,width=self.button_width, height=self.button_height),
+            ft.ElevatedButton("Векторный редактор Inkscape", on_click=self.Vector_editor_Inkscape, width=self.button_width,height=self.button_height),
+            ft.ElevatedButton("Раздел «Графика»", on_click=self.Section_Graphics, width=self.button_width,height=self.button_height),
         ]
 
         self.search_field = ft.TextField(label="Поиск", on_change=self.filter_buttons)
@@ -503,3 +512,95 @@ class MenuManager:
             "6. Оптимизация памяти\n"
         )
         self.info_manager.show_info("Оптимизация баз данных", info)
+
+    def PDF_Qpdfview(self, e):
+        info = (
+            "Astra Linux PDF Qpdfview - это легковесный и быстрый просмотрщик PDF-документов,\n"
+            "разработанный специально для операционной системы Astra Linux. Программа предлагает\n"
+            "широкий функционал для комфортного чтения, редактирования и работы с PDF-файлами, сохраняя\n"
+            "при этом простоту и интуитивность интерфейса."
+        )
+        self.info_manager.show_info("PDF Qpdfview", info)
+
+    def Backup_and_Restore(self, e):
+        info = (
+            'Astra Linux "Резервное копирование и восстановление" - это мощное и удобное средство для создания\n'
+            'резервных копий данных и их восстановления в операционной системе Astra Linux. Программа\n'
+            'разработана с учетом специфики работы в среде Astra Linux, обеспечивая высокую надежность,\n'
+            'безопасность и простоту использования.'
+        )
+        self.info_manager.show_info("Резервное копирование и восстановление", info)
+
+    def Interactive_terminal(self, e):
+        info = (
+            'Astra Linux "Интерактивный терминал" - это мощное и удобное средство для работы с командной\n'
+            'строкой в операционной системе Astra Linux. Программа разработана с учетом специфики работы\n'
+            'в среде Astra Linux, обеспечивая высокую производительность, надежность и простоту использования.'
+        )
+        self.info_manager.show_info("Интерактивный терминал", info)
+
+    def Using_procedural_languages(self, e):
+        info = (
+            'Astra Linux "Использование процедурных языков" - это интегрированная среда разработки (IDE)\n'
+            'и набор инструментов, предназначенных для программирования на процедурных языках\n'
+            'программирования в операционной системе Astra Linux. Программа предоставляет все необходимые\n'
+            'инструменты для создания, отладки и тестирования программ, а также для управления проектами.'
+        )
+        self.info_manager.show_info("Использование процедурных языков", info)
+
+    def User_management(self, e):
+        info = (
+            'Astra Linux "Управление пользователями" - это мощное и удобное средство для администрирования\n'
+            'пользователей и групп в операционной системе Astra Linux. Программа предоставляет все\n'
+            'необходимые инструменты для создания, настройки и управления учетными записями пользователей,\n'
+            'а также для обеспечения безопасности и контроля доступа.'
+        )
+        self.info_manager.show_info("Управление пользователями", info)
+
+    def Mandatory_access_control(self, e):
+        info = (
+            'Astra Linux "Мандатное управление доступом" - это комплексная система безопасности,\n'
+            'предназначенная для обеспечения строгого контроля доступа к информации в операционной\n'
+            'системе Astra Linux. Программа реализует принципы мандатного управления доступом (MAC),\n'
+            'которые позволяют назначать уровни безопасности объектам и субъектам, а также\n'
+            'контролировать доступ на основе этих уровней.'
+        )
+        self.info_manager.show_info("Мандатное управление доступом", info)
+
+    def Goldendict_Dictionary(self, e):
+        info = (
+            'Astra Linux "Словарь Goldendict" - это мощный и универсальный словарь и переводчик,\n'
+            'разработанный специально для операционной системы Astra Linux. Программа поддерживает\n'
+            'множество форматов словарей и переводчиков, обеспечивая пользователям широкие возможности\n'
+            'для поиска слов, фраз и их перевода на различные языки.'
+        )
+        self.info_manager.show_info("Словарь Goldendict", info)
+
+    def Goldendict_Dictionary(self, e):
+        info = (
+            'Astra Linux "Словарь Goldendict" - это мощный и универсальный словарь и переводчик,\n'
+            'разработанный специально для операционной системы Astra Linux. Программа поддерживает\n'
+            'множество форматов словарей и переводчиков, обеспечивая пользователям широкие возможности\n'
+            'для поиска слов, фраз и их перевода на различные языки.'
+        )
+        self.info_manager.show_info("Словарь Goldendict", info)
+
+    def Vector_editor_Inkscape(self, e):
+        info = (
+            'Astra Linux "Векторный редактор Inkscape" - это мощный и универсальный инструмент для\n'
+            'создания и редактирования векторной графики, разработанный специально для операционной\n'
+            'системы Astra Linux. Программа предоставляет широкий набор инструментов и функций для\n'
+            'создания профессиональных графических работ, от простых логотипов до сложных иллюстраций.'
+        )
+        self.info_manager.show_info("Векторный редактор Inkscape", info)
+
+    def Section_Graphics(self, e):
+        info = (
+            'Astra Linux "Раздел «Графика»" - это интегрированный набор инструментов и программ\n'
+            'для работы с графикой, разработанный специально для операционной системы Astra Linux.\n'
+            'Программа предоставляет пользователям широкий выбор инструментов для создания,\n'
+            'редактирования и обработки изображений, а также для работы с векторной графикой\n'
+            'и 3D-моделированием.'
+        )
+        self.info_manager.show_info("Раздел «Графика»", info)
+
