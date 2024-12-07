@@ -23,7 +23,7 @@ pip install flet
 ## **Installation**
 
 1. Clone the repository:
-```bash
+```cmd
 git clone https://github.com/kryptoNkn/AstraLinuxHelperSchoolProject2024.git
 cd AstraLinuxHelperSchoolProject2024
 ```
