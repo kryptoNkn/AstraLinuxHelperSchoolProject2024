@@ -14,7 +14,7 @@ My school project, which I did specifically for NRNU MEPhI. It took a little les
 
 ## *Requirements*
 
-- Python 3.7 or higher
+- Python 3.9 or higher
 - Flet library
 ```bash
 pip install flet
