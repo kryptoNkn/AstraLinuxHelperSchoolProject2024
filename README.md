@@ -3,7 +3,7 @@
 
 ## **Project Description**
 
-This project is a graphical interface to help users use the Astra Linux operating system. The application provides users with useful links, information, and instructions on how to work with Astra Linux.
+My school project, which I did specifically for NRNU MEPhI. It took a little less than 2 months to develop. This project is a graphical interface to help users use the Astra Linux operating system. The application provides users with useful links, information, and instructions on how to work with Astra Linux.
 
 ## **Main functions**
 
